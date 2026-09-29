@@ -1,0 +1,7 @@
+services:
+  life-fitness:
+    build: .
+    container_name: life-fitness
+    restart: unless-stopped
+    ports:
+      - "8080:80"   # change 8080 to any free host port (or 80)

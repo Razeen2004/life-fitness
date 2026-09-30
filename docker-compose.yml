@@ -4,4 +4,6 @@ services:
     container_name: life-fitness
     restart: unless-stopped
     ports:
-      - "8080:80"   # change 8080 to any free host port (or 80)
+      # Host port is configurable: PORT=8123 docker compose up -d --build
+      # (or put PORT=8123 in a .env file next to this file)
+      - "${PORT:-18420}:80"

@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Life Fitness Gym | Train Hard. Stay Strong. Be Your Best.</title>
 <meta name="description" content="Life Fitness Gym – 20 years of premium, air-conditioned fitness with expert guidance. View membership plans and timings.">
+<link rel="icon" type="image/jpeg" href="images/life-fitness-logo-square.jpeg">
+<link rel="apple-touch-icon" href="images/life-fitness-logo-square.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -82,8 +84,9 @@ section { padding: 100px 0; position: relative; }
 .navbar.scrolled { background: rgba(10, 10, 10, .92); backdrop-filter: blur(12px); box-shadow: 0 4px 30px rgba(0,0,0,.6); border-bottom: 1px solid var(--line); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
 .logo { font: 900 1.25rem 'Montserrat', sans-serif; letter-spacing: .06em; display: flex; align-items: center; gap: 10px; }
-.logo-mark { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--red), var(--red-dark)); display: grid; place-items: center; box-shadow: 0 0 18px var(--red-glow); }
-.logo-mark svg { width: 20px; height: 20px; fill: #fff; }
+.logo-mark { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; display: grid; place-items: center; box-shadow: 0 0 18px var(--red-glow); background: #000; }
+.logo-mark img { width: 100%; height: 100%; object-fit: cover; }
+.footer-brand .logo-mark { width: 46px; height: 46px; }
 .logo b { color: var(--red); font-weight: 900; }
 .nav-links { display: flex; align-items: center; gap: 24px; }
 .nav-links a { font: 600 .82rem 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: .1em; position: relative; padding: 6px 0; transition: color .3s; }
@@ -215,17 +218,24 @@ section { padding: 100px 0; position: relative; }
    6c. PHOTOGRAPHY / GALLERY
    ========================================================== */
 .gallery { background: var(--dark); }
+.gallery-sub { margin-bottom: 54px; }
+.gallery-sub:last-child { margin-bottom: 0; }
+.gallery-sub h3 { font: 700 .95rem 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: .15em; color: var(--red); margin-bottom: 22px; }
 .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 230px; gap: 16px; }
 .shot { position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--line); cursor: zoom-in; background: linear-gradient(135deg, #2a0000, #111); padding: 0; }
 .shot.wide { grid-column: span 2; }
 .shot.tall { grid-row: span 2; }
-.shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease), filter .5s; filter: grayscale(.35) contrast(1.05); }
+.shot img, .shot video { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease), filter .5s; filter: grayscale(.35) contrast(1.05); }
 .shot::after { content: attr(data-caption); position: absolute; inset: auto 0 0 0; padding: 40px 18px 16px; background: linear-gradient(transparent, rgba(0,0,0,.85)); color: #fff; font: 700 .8rem 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: .12em; transform: translateY(100%); transition: transform .4s var(--ease); text-align: left; }
-.shot:hover img { transform: scale(1.08); filter: none; }
+.shot:hover img, .shot:hover video { transform: scale(1.08); filter: none; }
 .shot:hover::after { transform: none; }
+.shot .play-btn { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+.shot .play-btn span { width: 64px; height: 64px; border-radius: 50%; background: rgba(225,6,0,.85); backdrop-filter: blur(2px); display: grid; place-items: center; box-shadow: 0 0 30px var(--red-glow); transition: transform .3s var(--ease); }
+.shot:hover .play-btn span { transform: scale(1.12); }
+.shot .play-btn svg { width: 24px; height: 24px; fill: #fff; margin-left: 4px; }
 .lightbox { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,.92); display: none; align-items: center; justify-content: center; padding: 30px; cursor: zoom-out; }
 .lightbox.open { display: flex; }
-.lightbox img { max-width: 100%; max-height: 100%; border-radius: 10px; box-shadow: 0 0 60px var(--red-glow); }
+.lightbox img, .lightbox video { max-width: 100%; max-height: 100%; border-radius: 10px; box-shadow: 0 0 60px var(--red-glow); cursor: default; }
 
 /* ==========================================================
    7. TIMINGS
@@ -243,6 +253,11 @@ section { padding: 100px 0; position: relative; }
    ========================================================== */
 .contact { background: var(--dark); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
+.map-card { margin-top: 16px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--card); }
+.map-card iframe { width: 100%; height: 260px; border: 0; display: block; filter: grayscale(.25) contrast(1.05); }
+.map-card a.map-link { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px; font: 700 .85rem 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: .08em; color: var(--red); transition: background .3s; }
+.map-card a.map-link:hover { background: rgba(225,6,0,.08); }
+.map-card a.map-link svg { width: 18px; height: 18px; fill: var(--red); }
 .contact-info p { color: var(--muted); margin: 16px 0 30px; }
 .contact-item { display: flex; align-items: center; gap: 18px; padding: 20px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 16px; transition: border-color .3s, transform .3s var(--ease); }
 .contact-item:hover { border-color: var(--red); transform: translateX(6px); }
@@ -315,6 +330,7 @@ footer { background: #050505; border-top: 1px solid var(--line); padding: 60px 0
   section { padding: 64px 0; }
   .services-grid, .timings-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-auto-rows: 170px; gap: 10px; }
+  .gallery-sub { margin-bottom: 38px; }
   .hero-btns .btn { flex: 1 1 100%; }
   .hero-stats { gap: 28px; }
   .contact-form { padding: 26px 20px; }
@@ -337,7 +353,7 @@ footer { background: #050505; border-top: 1px solid var(--line); padding: 60px 0
 <header class="navbar" id="navbar">
   <div class="container nav-inner">
     <a href="#home" class="logo" aria-label="Life Fitness Gym home">
-      <span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M3 9h2v6H3zM6 7h2v10H6zM16 7h2v10h-2zM19 9h2v6h-2zM8 11h8v2H8z"/></svg></span>
+      <span class="logo-mark"><img src="images/life-fitness-logo-square.jpeg" alt="Life Fitness Gym logo" width="40" height="40"></span>
       LIFE <b>FITNESS</b> GYM
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Main">
@@ -540,14 +556,31 @@ footer { background: #050505; border-top: 1px solid var(--line); padding: 60px 0
       <h2 class="section-title">Inside <span>Life Fitness</span></h2>
       <p>A look at our floor, our equipment and the people who train here.</p>
     </div>
-    <!-- Placeholder photos: replace each src with your own gym photos -->
-    <div class="gallery-grid">
-      <button class="shot wide tall reveal" data-caption="The Gym Floor"><img loading="lazy" alt="Gym floor" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=70"></button>
-      <button class="shot reveal" style="--d:.1s" data-caption="Free Weights"><img loading="lazy" alt="Free weights" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=70"></button>
-      <button class="shot reveal" style="--d:.15s" data-caption="Cardio Zone"><img loading="lazy" alt="Cardio zone" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=700&q=70"></button>
-      <button class="shot wide reveal" style="--d:.1s" data-caption="Personal Training"><img loading="lazy" alt="Personal training" src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1000&q=70"></button>
-      <button class="shot reveal" style="--d:.1s" data-caption="Machines"><img loading="lazy" alt="Machines" src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=700&q=70"></button>
-      <button class="shot reveal" style="--d:.15s" data-caption="Martial Arts"><img loading="lazy" alt="Martial arts" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=700&q=70"></button>
+    <div class="gallery-sub">
+      <h3>Our Gym</h3>
+      <div class="gallery-grid">
+        <button class="shot video-shot wide tall reveal" data-caption="Gym Tour Video" data-video="images/gym-tour.mp4">
+          <video muted loop autoplay playsinline preload="metadata" src="images/gym-tour.mp4"></video>
+          <span class="play-btn"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <button class="shot reveal" style="--d:.1s" data-caption="Weight Training Floor"><img loading="lazy" alt="Weight training floor" src="images/gym-weight-machines.jpeg"></button>
+        <button class="shot reveal" style="--d:.15s" data-caption="Cardio Fitness Zone"><img loading="lazy" alt="Cardio fitness zone" src="images/gym-cardio-area-1.jpeg"></button>
+        <button class="shot wide reveal" style="--d:.1s" data-caption="Spinning &amp; Cardio"><img loading="lazy" alt="Spinning and cardio area" src="images/gym-cardio-area-2.jpeg"></button>
+        <button class="shot reveal" style="--d:.1s" data-caption="Cardio Fitness Area"><img loading="lazy" alt="Cardio fitness area" src="images/gym-cardio-area-3.jpeg"></button>
+        <button class="shot reveal" style="--d:.15s" data-caption="Reception"><img loading="lazy" alt="Gym reception" src="images/gym-reception.jpeg"></button>
+      </div>
+    </div>
+
+    <div class="gallery-sub">
+      <h3>Achievements &amp; Titles</h3>
+      <div class="gallery-grid">
+        <button class="shot wide tall reveal" data-caption="Mr. Sindh &amp; Mr. Karachi Stage"><img loading="lazy" alt="Mr Sindh and Mr Karachi bodybuilding stage" src="images/achievement-mr-sindh-karachi-stage.jpeg"></button>
+        <button class="shot reveal" style="--d:.1s" data-caption="Award Presentation"><img loading="lazy" alt="Award presentation" src="images/achievement-award-presentation.jpeg"></button>
+        <button class="shot reveal" style="--d:.15s" data-caption="ABBF Championship 2025"><img loading="lazy" alt="ABBF Asian Bodybuilding Championship result poster" src="images/achievement-abbf-championship-poster.jpeg"></button>
+        <button class="shot wide reveal" style="--d:.1s" data-caption="South Bodybuilding Stage"><img loading="lazy" alt="South Bodybuilding and Physique Sports Association stage" src="images/achievement-south-bodybuilding-stage.jpeg"></button>
+        <button class="shot reveal" style="--d:.1s" data-caption="Trophy Handover"><img loading="lazy" alt="Trophy handover" src="images/achievement-trophy-handover.jpeg"></button>
+        <button class="shot reveal" style="--d:.15s" data-caption="Championship Stage"><img loading="lazy" alt="Championship stage lineup" src="images/achievement-championship-stage-wide.jpeg"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -597,6 +630,15 @@ footer { background: #050505; border-top: 1px solid var(--line); padding: 60px 0
           <span class="ci"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v5.4l4 2.4-.8 1.3L11 13V7h2z"/></svg></span>
           <span><small>Open Daily</small><strong>7–9 AM · 5 PM–1 AM</strong></span>
         </a>
+
+        <!-- Google Maps embed (no API key needed); fallback link opens the real pinned location -->
+        <div class="map-card">
+          <iframe src="https://www.google.com/maps?q=Life+Fitness+Gym,+Sahba+Akhtar+Rd,+Block+13D-2+Gulshan-e-Iqbal,+Karachi&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Life Fitness Gym location map"></iframe>
+          <a class="map-link" href="https://maps.app.goo.gl/zTnBFoAXVfbMaDun8" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+            Open in Google Maps
+          </a>
+        </div>
       </div>
 
       <!-- UI-only form: no backend, submission is intercepted in JS -->
@@ -618,7 +660,10 @@ footer { background: #050505; border-top: 1px solid var(--line); padding: 60px 0
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#home" class="logo">LIFE <b>FITNESS</b> GYM</a>
+        <a href="#home" class="logo">
+          <span class="logo-mark"><img src="images/life-fitness-logo-square.jpeg" alt="Life Fitness Gym logo" width="46" height="46"></span>
+          LIFE <b>FITNESS</b> GYM
+        </a>
         <p>Train Hard. Stay Strong. Be Your Best. Twenty years of premium fitness and expert guidance.</p>
       </div>
       <div class="footer-links">
@@ -641,7 +686,10 @@ footer { background: #050505; border-top: 1px solid var(--line); padding: 60px 0
   </div>
 </footer>
 
-<div class="lightbox" id="lightbox" aria-hidden="true"><img alt=""></div>
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <img alt="">
+  <video controls playsinline style="display:none"></video>
+</div>
 
 <!-- Floating WhatsApp button -->
 <a class="wa-float" href="https://wa.me/923156683553" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -723,19 +771,44 @@ footer { background: #050505; border-top: 1px solid var(--line); padding: 60px 0
     setTimeout(() => (msg.textContent = ''), 6000);
   });
 
-  /* ---------- 6. Gallery lightbox ---------- */
+  /* ---------- 6. Gallery lightbox (images + video) ---------- */
   const lightbox = document.getElementById('lightbox');
   const lbImg = lightbox.querySelector('img');
-  document.querySelectorAll('.shot img').forEach(img => {
+  const lbVideo = lightbox.querySelector('video');
+
+  const closeLb = () => {
+    lightbox.classList.remove('open');
+    lbVideo.pause();
+  };
+
+  // Photo tiles
+  document.querySelectorAll('.shot:not(.video-shot) img').forEach(img => {
     img.addEventListener('error', () => img.remove());           // broken image -> keep red gradient tile
     img.parentElement.addEventListener('click', () => {
+      lbVideo.pause();
+      lbVideo.style.display = 'none';
+      lbImg.style.display = '';
       lbImg.src = img.src.replace(/w=\d+/, 'w=1600');
       lbImg.alt = img.alt;
       lightbox.classList.add('open');
     });
   });
-  const closeLb = () => lightbox.classList.remove('open');
-  lightbox.addEventListener('click', closeLb);
+
+  // Video tile: muted preview in the grid, full video with sound + controls in the lightbox
+  document.querySelectorAll('.shot.video-shot').forEach(tile => {
+    const src = tile.dataset.video;
+    tile.addEventListener('click', () => {
+      lbImg.style.display = 'none';
+      lbVideo.style.display = '';
+      lbVideo.src = src;
+      lbVideo.muted = false;
+      lightbox.classList.add('open');
+      lbVideo.play().catch(() => {});                             // autoplay-with-sound can be blocked; controls still work
+    });
+  });
+
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+  lbImg.addEventListener('click', closeLb);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 
   /* ---------- 7. Footer year ---------- */
